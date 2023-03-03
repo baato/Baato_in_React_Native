@@ -1,6 +1,6 @@
 # Baato_in_React_Native
 Example app for Baato in React Native.
-This example usage Maplibre for Map SDK. Whose doc is obtained at: https://github.com/maplibre/maplibre-react-native/blob/main/README.md
+Please look this doc and repo for reference: https://github.com/maplibre/maplibre-react-native/blob/main/README.md
 
 # Dependencies
 For showing maps
