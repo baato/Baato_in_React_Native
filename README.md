@@ -1,7 +1,7 @@
-# Project Setup 
+# Example Project Setup
 > This example usage [MapLibre GL SDK for React Native](https://github.com/maplibre/maplibre-react-native).
 > 
-> Example showcase [baato API] (https://baato.io) usage for 
+> Example showcase [Baato API](https://baato.io) usage for 
 > 1. Search (Autocomplete)
 > 2. Reverse-search
 > 3. Map tile and style
@@ -24,9 +24,10 @@
 
 
 ### Autocomplete search
-> Obtain baatoToken from https://baato.io/account
-> Here queryparameter is q
-> Number of search result per q is indicated by limit which is 20 for this example. 
+> Obtain baatoToken from https://baato.io/account <br/>
+> Here ```queryparameter``` is ```q``` <br/>
+> Number of search result per ```q``` is indicated by ```limit``` which is ```20``` for this example <br/>
+
 <pre><code class="language-js">
   fetch(`https://api.baato.io/api/v1/search?key=${baatoToken}&q=${text}&limit=20`)
                 .then(response => response.json()
@@ -39,7 +40,7 @@
 > Full implementation of this code is available on [github](https://github.com/baato/Baato_in_React_Native/blob/master/SearchBar.js)
 
 ### Reverse Search
->In this example pressCoord is latitude and longitude for reverse geocoding
+>In this example ```pressCoord``` is ```latitude and longitude``` for reverse geocoding
 <pre><code class="language-js">
  useEffect(() => {
       fetch(`https://api.baato.io/api/v1/reverse?key=${baatoToken}&lat=${pressCoord.lat}&lon=${pressCoord.lon}`)
@@ -57,7 +58,7 @@
 
 
 ### Place detail
-> For requesting place detail placeId is needed which can be obtained from search or reverse-search
+> For requesting place detail ```placeId``` is needed which can be obtained from ```search``` or ```reverse-search```
 <pre><code class="language-js">
 fetch(`https://api.baato.io/api/v1/places?key=${baatoToken}&placeId=${placeResult.placeId}`)
         .then(response => response.json()
@@ -71,7 +72,7 @@ fetch(`https://api.baato.io/api/v1/places?key=${baatoToken}&placeId=${placeResul
 
 
 ### Map Display
-> Obtain styleURL from [baato](https://baato.io/account/styles)
+> ```styleURL``` can be obtained from [baato](https://baato.io/account/styles)
 ```
     <MapLibreGL.MapView
           styleURL="https://api.baato.io/api/v1/styles/outdoor?key=${baatoToken}"
@@ -85,12 +86,9 @@ fetch(`https://api.baato.io/api/v1/places?key=${baatoToken}&placeId=${placeResul
 
 
  ### Direction
- > For requesting direction API, array of coordinate i.e points[] in this setup, and mode are required parameters.
- > 
- > If forMapbox = true and instructions = true are set then the response and instructions are in detail and similar to mapbox navigation.
- > 
- > The route is encoded polyline with precision level of 6 so, if points are needed then can use polyline decoder as shown below.
- > 
+ > For requesting direction API, array of coordinate i.e ```points[]``` in this setup, and mode are required parameters.<br/>
+ > If ```forMapbox = true and instructions = true``` are set then the response and instructions are in detail and similar to mapbox navigation.<br/>
+ > The route is ```encoded polyline``` with precision level of ```6``` so, if points are needed then can use ```polyline decoder``` as shown below.<br/>
 <pre><code class="language-js">
   fetch(
           `https://api.baato.io/api/v1/directions?key=${baatoToken}`
